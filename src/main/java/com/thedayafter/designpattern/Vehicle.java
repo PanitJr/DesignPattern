@@ -4,27 +4,30 @@ package com.thedayafter.designpattern;
  * Created by waiti on 12/10/2015.
  */
 public abstract class Vehicle {
-    int Vin,MilePG;
-    String Make, Model;
+    int vin;
+    int milePG;
+    String make;
+    String model;
     Reservation reserve;
+
     public Vehicle(int MPG, String mke, String mdl){
-        Make = mke;
-        Model = mdl;
-        MilePG = MPG;
+        make = mke;
+        model = mdl;
+        milePG = MPG;
         reserve = null;
     }
     
     public int getVin(){
-        return Vin;
+        return vin;
     }
     public int getMilePG(){
-        return MilePG;
+        return milePG;
     }
     public String getMake(){
-        return Make;
+        return make;
     }
     public String getModel(){
-        return Model;
+        return model;
     }
      
 
@@ -33,16 +36,16 @@ public abstract class Vehicle {
     public abstract double getMonthlyCost();
      
     public void setVin(int vn){
-        Vin = vn;
+        vin = vn;
     }
     public void setMilePG(int MPG){
-        MilePG = MPG;
+        milePG = MPG;
     }
     public void setMake(String mke){
-        Make = mke;
+        make = mke;
     }
     public void setModel(String mdl){
-        Model = mdl;
+        model = mdl;
     }
      
     public void createReservation(String CompName, int numDays, int numWeeks, int numMonths){
@@ -55,9 +58,9 @@ public abstract class Vehicle {
      
     public String toString(){  
         if (reserve == null){
-            return getMake() + " " + getModel() + " " + getVin() + "Is not reserved";}
+            return getMake() + " " + getModel() + " " + getVin() + "is not reserved";}
         else{
-            return getMake() + " " + getModel() + " " + getVin() + "Is reserved";}
+            return getMake() + " " + getModel() + " " + getVin() + "is reserved";}
     }
 
     public Reservation getReserve() {
@@ -67,6 +70,6 @@ public abstract class Vehicle {
     public void setReserve(Reservation reserve) {
         this.reserve = reserve;
     }
-    //double calcRentalCost = (Car.DailyCost) + (numWeeks * Car.getWeeklyCost()) + (numMonths * Car.getMonthlyCost());
+    //double calcRentalCost = (Car.dailyCost) + (numWeeks * Car.getWeeklyCost()) + (numMonths * Car.getMonthlyCost());
 }
 

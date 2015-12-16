@@ -4,43 +4,43 @@ package com.thedayafter.designpattern;
  * Created by waiti on 12/10/2015.
  */
 public class Car extends Vehicle {
-  double DailyCost;
-   double WeeklyCost;
-   double MonthlyCost;
-   int NumSeats;
- 
- 
+ double dailyCost;
+ double weeklyCost;
+ double monthlyCost;
+ int numSeats;
+
+
  public Car(int MPG, int seats, String mke, String mdl){
-   super(MPG, mke,mdl);
-   NumSeats = seats;
-   reserve = null;
+  super(MPG, mke,mdl);
+  numSeats = seats;
+  reserve = null;
  }
- 
+
  public double getDailyCost(){
-  return DailyCost;
+  return dailyCost;
  }
  public double getWeeklyCost(){
-  return WeeklyCost;
+  return weeklyCost;
  }
  public double getMonthlyCost(){
-  return MonthlyCost;
+  return monthlyCost;
  }
  public int getNumSeats(){
-  return NumSeats;
+  return numSeats;
  }
-   
+
  public  void setDailyCost(){
-  DailyCost = 24.95;
+  dailyCost = 24.95;
  }
  public  void setWeeklyCost(){
-  WeeklyCost = 149.95;
+  weeklyCost = 149.95;
  }
  public  void setMonthlyCost(){
-  MonthlyCost = 514.95;
+  monthlyCost = 514.95;
  }
-   
-  public  void setNumSeats(int seats){
-  NumSeats = seats;
-  }
+
+ public  void setNumSeats(int seats){
+  numSeats = seats;
+ }
 }
 

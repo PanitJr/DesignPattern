@@ -4,38 +4,38 @@ package com.thedayafter.designpattern;
  * Created by waiti on 12/16/2015.
  */
 public class Truck extends Vehicle{
-double DailyCost;
-double WeeklyCost;
-double MonthlyCost;
-int NumrCap;
+double dailyCost;
+double weeklyCost;
+double monthlyCost;
+int numrCap;
 
 
 public Truck(int MPG, int rCap, String mke, String mdl){
 super(MPG,mke,mdl);
-NumrCap = rCap;
+numrCap = rCap;
 reserve = null;
 }
 public double getDailyCost(){
-return DailyCost;
+return dailyCost;
 }
 public double getWeeklyCost(){
-return WeeklyCost;
+return weeklyCost;
 }
 public double getMonthlyCost(){
-return MonthlyCost;
+return monthlyCost;
 }
 
 public void setDailyCost(){
-DailyCost = 34.95;
+dailyCost = 34.95;
 }
 public void setWeeklyCost(){
-WeeklyCost = 224.95;
+weeklyCost = 224.95;
 }
 public void setMonthlyCost(){
-MonthlyCost = 797.95;
+monthlyCost = 797.95;
 }
 public void setNumrCap(int rCap){
-NumrCap = rCap;
+numrCap = rCap;
 }
 }
 

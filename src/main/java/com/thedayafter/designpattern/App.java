@@ -1,10 +1,6 @@
-
 package com.thedayafter.designpattern;
 import java.util.*;
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
     public static void displayVehicles(Vehicle[] vehicles){
@@ -28,8 +24,8 @@ public class App
         }
     public static void main(String[] args){
 
-        String Make, Model, Company_name;
-        int cmd, Selection, total_cost, Vin, MilePG, seats, bseats, rcap;
+        String make, model, Company_name;
+        int cmd, Selection, totalCost, vin, milePG, seats, bseats, rcap;
 
         Vehicle[] vehicles = new Vehicle[25];
 
@@ -51,40 +47,40 @@ public class App
                     switch(Selection){
 
                         case 1: System.out.print("Enter the make of the car:");
-                        Make = input.next();
+                        make = input.next();
                         System.out.print("Enter the model of the car:");
-                        Model = input.next();
+                        model = input.next();
                         System.out.print("Enter the number of seats:");
                         seats = input.nextInt();
                         System.out.print("Enter the MPG:");
-                        MilePG = input.nextInt();
+                        milePG = input.nextInt();
                         loc = findNext(loc);
-                        vehicles[loc] = new Car(MilePG, seats, Make, Model);
+                        vehicles[loc] = new Car(milePG, seats, make, model);
                         break;
 
 
                         case 2: System.out.print("Enter the make of the SUV:");
-                        Make = input.next();
+                        make = input.next();
                         System.out.print("Enter the model of the SUV:");
-                        Model = input.next();
+                        model = input.next();
                         System.out.print("Enter the number of seats:");
                         seats = input.nextInt();
                         System.out.print("Enter the MPG:");
-                        MilePG = input.nextInt();
+                        milePG = input.nextInt();
                         loc = findNext(loc);
-                        vehicles[loc] = new SUV(MilePG, seats, Make, Model);
+                        vehicles[loc] = new SUV(milePG, seats, make, model);
                         break;
 
                         case 3: System.out.print("Enter the make of the Truck:");
-                        Make = input.next();
+                        make = input.next();
                         System.out.print("Enter the model of the Truck:");
-                        Model = input.next();
+                        model = input.next();
                         System.out.print("Enter the number of seats:");
                         seats = input.nextInt();
                         System.out.print("Enter the MPG:");
-                        MilePG = input.nextInt();
+                        milePG = input.nextInt();
                         loc = findNext(loc);
-                        vehicles[loc] = new Truck(MilePG, seats, Make, Model);
+                        vehicles[loc] = new Truck(milePG, seats, make, model);
                         break;
                         }
 
@@ -95,7 +91,7 @@ public class App
                     break;
 
                     case 3: System.out.print("Enter the vin of the vehicle to reserve:");
-                    Vin = input.nextInt();
+                    vin = input.nextInt();
                     System.out.println("How many months, weeks or days would you like to rent for? \n");
 
                     System.out.println("Months(if none type 0)?");
@@ -106,31 +102,35 @@ public class App
 
                     System.out.println("Days(if none type 0)?");
                     int numDays = input.nextInt();
-                    //reserveVehicle(Vin);// Supporting function
+                    //reserveVehicle(vin);// Supporting function
 
                     case 4: System.out.print("Enter Company name: ");
                     String compName = input.next();
 
 
-                    //double calcRentalCost= (Car.DailyCost) + (numWeeks * Car.getWeeklyCost()) + (numMonths * Car.getMonthlyCost());
-                    //total_cost = calcRentalCost;
+                    //double calcRentalCost= (Car.dailyCost) + (numWeeks * Car.getWeeklyCost()) + (numMonths * Car.getMonthlyCost());
+                    //totalCost = calcRentalCost;
 
                     //displayVehicles(compName);
-                    //System.out.println("Total cost for all vehicles: $" + total_cost);                               
+                    //System.out.println("Total cost for all vehicles: $" + totalCost);                               
                     }
                 }
             }
         System.out.println("Goodbye");
         }
     public static boolean isReserved(Vehicle[] vehicles){
-        for (int x = 0; x <= vehicles.length; x++){
-            if ((vehicles[x].reserve!=null)){
-                return true;
+        for (int x = 0; x <= vehicles.length; x++) {
+            try {
+                if ((vehicles[x].reserve != null)) {
+                    return true;
+                } else {
+                    return false;
                 }
-            else{
+            } catch (NullPointerException ne) {
                 return false;
-                }
             }
+        }
+
         return false;
         }
     }
