@@ -13,6 +13,14 @@ public class SUVFactory implements VehicleAbstractFactory {
     private String model;
     private int numberOfSeats;
 
+    public SUVFactory(int vin, int milePG, String make, String model, int numberOfSeats) {
+        this.vin = vin;
+        this.milePG = milePG;
+        this.make = make;
+        this.model = model;
+        this.numberOfSeats = numberOfSeats;
+    }
+
     public Vehicle createVehicle() {
         SUV s = new SUV(milePG, numberOfSeats, make, model);
         return s;

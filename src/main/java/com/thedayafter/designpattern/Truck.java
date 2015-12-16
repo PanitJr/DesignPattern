@@ -15,7 +15,12 @@ super(MPG,mke,mdl);
 numrCap = rCap;
 reserve = null;
 }
-public double getDailyCost(){
+
+    public Truck() {
+
+    }
+
+    public double getDailyCost(){
 return dailyCost;
 }
 public double getWeeklyCost(){

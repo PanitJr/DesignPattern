@@ -15,6 +15,10 @@ public class SUV extends Vehicle {
         reserve   = null;
     }
 
+    public SUV() {
+
+    }
+
     public double getDailyCost(){
         return dailyCost;
     }

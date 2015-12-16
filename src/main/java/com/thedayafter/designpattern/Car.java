@@ -13,7 +13,10 @@ public class Car extends Vehicle {
  public Car(int MPG, int seats, String mke, String mdl){
   super(MPG, mke,mdl);
   numSeats = seats;
-  reserve = null;
+ }
+
+ public Car() {
+
  }
 
  public double getDailyCost(){

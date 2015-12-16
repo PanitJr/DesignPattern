@@ -12,9 +12,15 @@ public class CarFactory implements VehicleAbstractFactory{
     private int milePG;
     private String make;
     private String model;
-    private Reservation reserve;
     private int numSeats;
 
+    public CarFactory(int vin, int milePG, String make, String model, int numSeats) {
+        this.vin = vin;
+        this.milePG = milePG;
+        this.make = make;
+        this.model = model;
+        this.numSeats = numSeats;
+    }
 
     public Vehicle createVehicle() {
         Car c = new Car(milePG,numSeats,make,model);

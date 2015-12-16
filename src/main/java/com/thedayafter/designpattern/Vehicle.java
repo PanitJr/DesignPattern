@@ -16,7 +16,11 @@ public abstract class Vehicle {
         milePG = MPG;
         reserve = null;
     }
-    
+
+    public Vehicle() {
+
+    }
+
     public int getVin(){
         return vin;
     }
