@@ -10,6 +10,9 @@ import java.util.*;
 public class App {
     static Vehicle[] vehicles = new Vehicle[25];
     static VehicleAbstractFactory vehicleAbstractFactory;
+    static String make, model, Company_name;
+    static int cmd, Selection, totalCost, vin, milePG, seats, bseats, rcap;
+    static Scanner input = new Scanner(System.in);
     public static void displayVehicles(Vehicle[] vehicles) {
         Iterator<Vehicle> vehicleIterator = Arrays.asList(vehicles).iterator();
         int i = 0;
@@ -46,15 +49,6 @@ public class App {
 
     public static void main(String[] args) {
 
-//        Vehicle x = new Car();
-//        x = new VehicleDeco(new Insurance(x));
-
-        String make, model, Company_name;
-        int cmd, Selection, totalCost, vin, milePG, seats, bseats, rcap;
-
-
-
-        Scanner input = new Scanner(System.in);
         boolean quit = false;
 
         int loc = 0;
@@ -73,16 +67,7 @@ public class App {
                         switch (Selection) {
 
                             case 1:
-                                System.out.print("Enter the VIN of the car:");
-                                vin = input.nextInt();
-                                System.out.print("Enter the make of the car:");
-                                make = input.next();
-                                System.out.print("Enter the model of the car:");
-                                model = input.next();
-                                System.out.print("Enter the number of seats:");
-                                seats = input.nextInt();
-                                System.out.print("Enter the MPG:");
-                                milePG = input.nextInt();
+                                inputData();
                                 loc = findNext(loc);
                                 vehicleAbstractFactory = new CarFactory(vin,milePG,make, model,seats );
                                 vehicles[loc] = vehicleAbstractFactory.createVehicle();
@@ -90,32 +75,14 @@ public class App {
 
 
                             case 2:
-                                System.out.print("Enter the VIN of the car:");
-                                vin = input.nextInt();
-                                System.out.print("Enter the make of the SUV:");
-                                make = input.next();
-                                System.out.print("Enter the model of the SUV:");
-                                model = input.next();
-                                System.out.print("Enter the number of seats:");
-                                seats = input.nextInt();
-                                System.out.print("Enter the MPG:");
-                                milePG = input.nextInt();
+                                inputData();
                                 loc = findNext(loc);
                                 vehicleAbstractFactory = new SUVFactory(vin,milePG,make, model,seats );
                                 vehicles[loc] = vehicleAbstractFactory.createVehicle();
                                 break;
 
                             case 3:
-                                System.out.print("Enter the VIN of the car:");
-                                vin = input.nextInt();
-                                System.out.print("Enter the make of the Truck:");
-                                make = input.next();
-                                System.out.print("Enter the model of the Truck:");
-                                model = input.next();
-                                System.out.print("Enter the number of seats:");
-                                seats = input.nextInt();
-                                System.out.print("Enter the MPG:");
-                                milePG = input.nextInt();
+                                inputData();
                                 loc = findNext(loc);
                                 vehicleAbstractFactory = new TruckFactory(vin,milePG,make, model,seats);
                                 vehicles[loc] = vehicleAbstractFactory.createVehicle();
@@ -159,7 +126,19 @@ public class App {
         System.out.println("Goodbye");
     }
 
+    public static void inputData(){
 
+        System.out.print("Enter the VIN of the vehicle:");
+        vin = input.nextInt();
+        System.out.print("Enter the make of the vehicle:");
+        make = input.next();
+        System.out.print("Enter the model of the vehicle:");
+        model = input.next();
+        System.out.print("Enter the number of seats:");
+        seats = input.nextInt();
+        System.out.print("Enter the MPG:");
+        milePG = input.nextInt();
+    }
 
 }
 
